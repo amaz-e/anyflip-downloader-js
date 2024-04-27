@@ -31,5 +31,9 @@ h1 {
 }
 
 #fileUrl {
-	width: 400px;
+	width: 380px;
+}
+
+#pageCount {
+	width: 20px;
 }

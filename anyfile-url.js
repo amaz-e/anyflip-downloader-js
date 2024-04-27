@@ -42,8 +42,31 @@
             while ((match = regex.exec(configData)) !== null) {
                 matches.push(match[1]);
             }
+            console.log(matches);
+            if (matches.length == 0)
+            {
+                var filenames = prepareFilenameFromURL(); 
+                for (var i = 0; i < filenames.length; i++) {
+                    matches.push(filenames[i]);
+                }
+            }
+            console.log(matches);   
             return matches;
         }
+
+        function prepareFilenameFromURL(){
+            const pageCount = document.getElementById('pageCount').value;
+            let jpgURLs = [];
+            console.log(pageCount);
+            for (let i = 0; i < pageCount; i++) {
+                const filename = i+1+".jpg";
+                jpgURLs.push(filename);
+
+            }
+            console.log(jpgURLs.length);
+            return jpgURLs;
+        }
+        
 
         function displayTitle(title) {
             const filenameTextarea = document.getElementById('filename');
@@ -51,6 +74,7 @@
         }
 
         function displayFileUrls(filenames) {
+            
             const fileUrl = prepareURL(document.getElementById('fileUrl').value);
             const fileUrls = filenames.map(filename => fileUrl + 'files/large/' + filename);
             const fileUrlsTextarea = document.getElementById('fileurls');
@@ -63,11 +87,11 @@
                 const jpgUrls = extractJpgUrlsFromTextarea();
                 const progressBar = document.getElementById('progressBar');
 
-                updateProgressBar(progressBar, 0); // Reset progress bar
+                updateProgressBar(progressBar, 0); 
 
                 const jpgBuffers = await fetchAndProcessJpgs(jpgUrls, progressBar);
 
-                updateProgressBar(progressBar, 100); // Update progress bar after JPGs processing
+                updateProgressBar(progressBar, 100); 
 
                 const pdfDoc = await createPDFDocument(jpgBuffers);
 
