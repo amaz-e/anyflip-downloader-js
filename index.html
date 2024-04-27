@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filename Extractor</title>
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.min.js"></script>
+	<script src="anyfile-url.js"></script>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Filename Extractor</h1>
+    <label for="fileUrl">Enter URL of the text file (https://online.anyflip.com/sth/sth/):</label><br>
+    <input type="text" id="fileUrl" placeholder="Enter URL...">
+    <button onclick="extractAndDisplayData()">Extract Data</button>
+    <button onclick="downloadPDF()">Download PDF</button>
+    <hr class="wider" align="left">
+    <label for="filename">Filename:</label><br>
+    <textarea id="filename" class="wider" rows="1" cols="70" readonly></textarea>
+    <br>
+    <label for="fileurls">Fileurls: </label><br>
+    <textarea id="fileurls" class="wider" rows="40" cols="70" readonly></textarea>
+    <br>
+    <progress id="progressBar" value="0" max="100"></progress>
+    <br>
+	
+</body>
+</html>

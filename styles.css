@@ -1,0 +1,35 @@
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	margin: 0;
+	padding: 10;
+	background-color: #f0f0f0;
+	color: #333;
+	margin-left: 20px;
+}
+
+header {
+	background-color: #007bff;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+}
+
+h1 {
+	font-family: "Segoe UI", sans-serif;
+	color: #333;
+}
+
+.wider {
+	width: 600px;
+	resize: none; /* Disable resizing */
+    overflow-y: auto; /* Add scrollbar when content exceeds height */
+}
+
+#progressBar {
+	width: 610px;
+	height: 30px;
+}
+
+#fileUrl {
+	width: 400px;
+}
