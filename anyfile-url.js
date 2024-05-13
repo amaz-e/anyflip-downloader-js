@@ -101,6 +101,7 @@
                 link.href = window.URL.createObjectURL(blob);
                 link.download = title ? title + '.pdf' : 'file.pdf';
                 link.click();
+                document.getElementById('pageCount').value = null;
             } catch (error) {
                 console.error('Error:', error);
             }
